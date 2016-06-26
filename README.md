@@ -1,6 +1,6 @@
 # spring-boot-password-validator
 
-Password Validator API Description
+#Password Validator API Description
 
 The password validation RESTful API takes a plaintext password as input and validate it against the following rules:
 
@@ -9,7 +9,7 @@ The password validation RESTful API takes a plaintext password as input and vali
 - Must include both upper and lowercase letters, plus at least one number 0-9
 - Must not include the same sequence of two or more characters repeated twice consecutively (aabbaa is valid, but aabbaabb, aaa and acac are not)
 
--How to run
+#How to run
 
 > Pre requisites :
 
@@ -32,15 +32,15 @@ export JAVA_HOME=$(path to JDK 1.8 Home)
 
 > Running the application :
 
-Start the application via :
+#Start the application via :
 
 /validator.sh start
 
-Stop the application via :
+#Stop the application via :
 
 /validator.sh stop
 
-Run the validation password service via passing the password text as an argument :
+#Run the validation password service via passing the password text as an argument :
 
 /validator.sh  passwordToBeTested1
 
