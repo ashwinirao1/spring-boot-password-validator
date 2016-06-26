@@ -1,0 +1,150 @@
+Ashwini-Rao:Home$ java -version
+java version "1.8.0_45"
+Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
+Ashwini-Rao:Home$ ls
+README.txt	catalina.out	source-code.zip	validator.jar	validator.sh
+Ashwini-Rao:Home$ ./validator.sh start
+Option selected : start
+Server started.
+Ashwini-Rao:Home$ ./validator.sh testpassword
+Option selected : testpassword
+Executing service with password = testpassword 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   263    0   263    0     0   1383      0 --:--:-- --:--:-- --:--:--  1384
+{
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Password : Must include at least one upper case character.",
+         "errorCode" : 1000
+      },
+      {
+         "errorCode" : 1000,
+         "errorMessage" : "Invalid Password : Must include at least one number."
+      }
+   ],
+   "timestamp" : 1463983886999,
+   "status" : 400,
+   "message" : "Failure"
+}
+Ashwini-Rao:Home$ ./validator.sh testpassword1
+Option selected : testpassword1
+Executing service with password = testpassword1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   174    0   174    0     0  12106      0 --:--:-- --:--:-- --:--:-- 12428
+{
+   "status" : 400,
+   "message" : "Failure",
+   "timestamp" : 1463983896610,
+   "errors" : [
+      {
+         "errorCode" : 1000,
+         "errorMessage" : "Invalid Password : Must include at least one upper case character."
+      }
+   ]
+}
+Ashwini-Rao:Home$ ./validator.sh testpassword1W
+Option selected : testpassword1W
+Executing service with password = testpassword1W 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   100    0   100    0     0   7330      0 --:--:-- --:--:-- --:--:--  7692
+{
+   "errors" : null,
+   "status" : 0,
+   "timestamp" : 1463983901598,
+   "message" : "Success",
+   "password" : "testpassword1W"
+}
+Ashwini-Rao:Home$ ./validator.sh testpassword1ACAC
+Option selected : testpassword1ACAC
+Executing service with password = testpassword1ACAC 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   272    0   272    0     0  20961      0 --:--:-- --:--:-- --:--:-- 22666
+{
+   "status" : 400,
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Password : Must not include the same sequence of two or more characters repeated twice consecutively (aabbaa is valid, but aabbaabb, aaaa and acac are not).",
+         "errorCode" : 1000
+      }
+   ],
+   "timestamp" : 1463983924082,
+   "message" : "Failure"
+}
+Ashwini-Rao:Home$ ./validator.sh test
+Option selected : test
+Executing service with password = test 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   378    0   378    0     0  11859      0 --:--:-- --:--:-- --:--:-- 12193
+{
+   "timestamp" : 1463983933820,
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Password : Password length should be between 20 and 8 characters long.",
+         "errorCode" : 1000
+      },
+      {
+         "errorMessage" : "Invalid Password : Must include at least one upper case character.",
+         "errorCode" : 1000
+      },
+      {
+         "errorMessage" : "Invalid Password : Must include at least one number.",
+         "errorCode" : 1000
+      }
+   ],
+   "status" : 400,
+   "message" : "Failure"
+}
+Ashwini-Rao:Home$ ./validator.sh teS1
+Option selected : teS1
+Executing service with password = teS1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   186    0   186    0     0  15253      0 --:--:-- --:--:-- --:--:-- 16909
+{
+   "message" : "Failure",
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Password : Password length should be between 20 and 8 characters long.",
+         "errorCode" : 1000
+      }
+   ],
+   "status" : 400,
+   "timestamp" : 1463983945691
+}
+Ashwini-Rao:Home$ ./validator.sh teS1asdqwertyuioasdfghj
+Option selected : teS1asdqwertyuioasdfghj
+Executing service with password = teS1asdqwertyuioasdfghj 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   186    0   186    0     0  13388      0 --:--:-- --:--:-- --:--:-- 14307
+{
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Password : Password length should be between 20 and 8 characters long.",
+         "errorCode" : 1000
+      }
+   ],
+   "status" : 400,
+   "message" : "Failure",
+   "timestamp" : 1463983970536
+}
+Ashwini-Rao:Home$ ./validator.sh stop
+Option selected : stop
+Killing server at 70719
+Server stopped.
+Ashwini-Rao:Home$ ps -ef|grep java
+  501 70754 70137   0 11:13PM ttys007    0:00.01 grep java
+Ashwini-Rao:Home$ 
