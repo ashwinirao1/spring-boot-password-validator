@@ -1,4 +1,4 @@
-# spring-boot-password-validator
+# Spring Boot Password Validator
 
 #Password Validator API Description
 
