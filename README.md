@@ -1,6 +1,6 @@
 # Spring Boot Password Validator
 
-#Password Validator API Description
+#API Description
 
 The password validation RESTful API takes a plaintext password as input and validate it against the following rules:
 
